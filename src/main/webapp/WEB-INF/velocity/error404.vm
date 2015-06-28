@@ -1,0 +1,15 @@
+<html>
+	<head/>
+	<body>
+		<div>
+			<div>
+				<div style="font-size: 40px;padding: 200px;text-align:center;">
+					<div style="color:red;font-size:80px;">Error 404</div>
+					<div>&nbsp;</div>
+					<div>Oops Page Not Found..</div>
+					<div><a href="/Club/home">Home</a></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
