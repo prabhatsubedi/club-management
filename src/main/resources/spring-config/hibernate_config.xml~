@@ -33,6 +33,9 @@
 				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+<prop key="maxwait">1000</prop>
+<prop key="maxidle">25</prop>
+<prop key="minidle">5</prop>
 			</props>
 		</property>
 	</bean>
@@ -41,6 +44,7 @@
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+
 
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
