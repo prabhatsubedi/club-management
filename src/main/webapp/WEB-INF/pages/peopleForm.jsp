@@ -133,6 +133,7 @@
 					</div>
 					<!-- /.panel -->
 				</div>
+<div style="margin-top:1em;margin-bottom:1em;text-align: center">Developed by Shile Fasugba</div>
 				<!-- /.col-lg-12 -->
 			</div>
 			<!-- /.row -->
@@ -142,7 +143,7 @@
 	</div>
 	<!-- /#wrapper -->
 
-<div style="margin-top:1em;margin-bottom:1em;text-align: center">Developed by Shile Fasugba</div>
+
 	<script src="js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/plugins/metisMenu/metisMenu.min.js"></script>
