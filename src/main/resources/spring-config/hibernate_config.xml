@@ -16,7 +16,10 @@
 		<property name="password" value="${jdbc.password}" />
 	        
 
-		
+		<property name="acquireIncrement" value="${hibernate.c3p0.acquire_increment}"/>
+		<property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idle_test_period}"/>
+		<property name="minPoolSize" value="${hibernate.c3p0.min_size}"/>
+		<property name="maxPoolSize" value="${hibernate.c3p0.max_size}"/>
 	</bean>
 
 
