@@ -37,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<c:url value="adminDashBord"/>" >Wellcome <%=username %></a>
+                <a class="navbar-brand" href="<c:url value="adminDashBord"/>" >Welcome <%=username %></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -118,6 +118,8 @@
 
     </div>
     <!-- /#wrapper -->
+
+<div style="margin-top:1em;text-align: center">Developed by Shile Fasugba</div>
 
     <script src="js/jquery-1.11.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
