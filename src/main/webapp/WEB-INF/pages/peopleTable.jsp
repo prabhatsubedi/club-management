@@ -115,6 +115,8 @@
     </div>
     <!-- /#wrapper -->
 
+<div style="margin-top:1em;margin-bottom:1em;text-align: center">Developed by Shile Fasugba</div>
+
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
 

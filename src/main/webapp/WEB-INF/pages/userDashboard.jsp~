@@ -77,7 +77,7 @@
                                 	
                                 	<b>Phone : </b> <span>${peopleEntity.phone}</span><br><br><br>
                                 	
-                                	<b>Intrests : </b> <span>${peopleEntity.intrests}</span><br><br><br>
+                                	<b>Interests : </b> <span>${peopleEntity.intrests}</span><br><br><br>
                                 	
                                 	<b>Member : </b> <span>${peopleEntity.member}</span><br><br><br>
 	                            </div>

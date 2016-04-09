@@ -5,27 +5,26 @@
 <html>
 <head>
 	
-    <title>User DashBoard</title>
+    <title>People Table</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="css/plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="css/sb-admin-2.css" rel="stylesheet">
     <link href="css/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	
 </head>
 <body>
-		<%
-			response.setHeader("Cache-Control","no-cache");
-			response.setHeader("Cache-Control","no-store");
-			response.setHeader("Pragma","no-cache");
-			response.setDateHeader ("Expires", 0);
-			 HttpSession s=request.getSession();
-			if(s.getAttribute("userName")==null){
-				  response.sendRedirect("");
-			}
-			 String username = (String) session.getAttribute("userName");
-         %> 
-         
+
+	<%
+		response.setHeader("Cache-Control","no-cache");
+		response.setHeader("Cache-Control","no-store");
+		response.setHeader("Pragma","no-cache");
+		response.setDateHeader ("Expires", 0);
+		 HttpSession s=request.getSession();
+		if(s.getAttribute("userName")==null){
+			  response.sendRedirect("");
+		}
+		 String username = (String) session.getAttribute("userName");
+     %> 
 	<div id="wrapper">
 
         <!-- Navigation -->
@@ -37,7 +36,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<c:url value="userDashboard"/>" >Welcome <%=username %></a>
+                <a class="navbar-brand" href="<c:url value="adminDashBord"/>" >Wellcome <%=username %></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -45,10 +44,11 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li><a class="active">My Profile</a></li>
-                        <li><a href="<c:url value="searchClub"/>" >Search Clubs</a></li>
-                        <li> <a href="<c:url value="eventList"/>" >Events</a></li>
-                        <li> <a href="<c:url value="logout"/>" >LogOut</a></li>
+                         <li> <a href="<c:url value="adminDashBord"/>">Upload csv</a></li>
+	                     <li> <a href="<c:url value="clubTable"/>"  >Club Details</a></li>
+	                     <li> <a href="<c:url value="peopleTable"/>" class="active" >People Details</a></li>
+	                     <li> <a href="<c:url value="createEvent"/>" >Create Event</a></li>
+	                     <li> <a href="<c:url value="logout"/>" >LogOut</a></li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -59,7 +59,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">My Profile</h1>
+                    <h1 class="page-header">User Data</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -70,20 +70,37 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <div>
-                                	<b>Username : </b> <span>${peopleEntity.name}</span><br><br><br>
-                                	
-                                	<b>Date Of Birth : </b> <span>${peopleEntity.dob}</span><br><br><br>
-                                	
-                                	<b>Phone : </b> <span>${peopleEntity.phone}</span><br><br><br>
-                                	
-                                	<b>Interests : </b> <span>${peopleEntity.intrests}</span><br><br><br>
-                                	
-                                	<b>Member : </b> <span>${peopleEntity.member}</span><br><br><br>
-	                            </div>
-	                            
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Date Of Birth</th>
+                                            <th>Phone</th>
+                                            <th>Intrests</th>
+                                            <th>Member</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+	                                    <c:forEach items="${peopleEntities}" var="people" >
+	                                        <tr class="odd gradeX">
+	                                            <td>${people.name}</td>
+	                                            <td>${people.dob}</td>
+	                                            <td>${people.phone}</td>
+	                                            <td>${people.intrests}</td>
+	                                            <td>${people.member}</td>
+	                                            <td class="center"><a href="<c:url value="editPeopleDetail/${people.id}" />">Edit</a></td>
+	                                        </tr>
+	                                     </c:forEach>
+                                    </tbody>
+                                </table>
                             </div>
                             <!-- /.table-responsive -->
+                            
+                            <div>
+	                        	<a href="exportPeopleCSV">Export People CSV</a>
+	                        </div>
+                            
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -97,13 +114,21 @@
 
     </div>
     <!-- /#wrapper -->
-<div style="margin-top:1em;margin-bottom:1em;text-align: center">Developed by Shile Fasugba</div>
 
+    <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
     <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
