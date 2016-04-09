@@ -4,7 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Admin DashBoard</title>
+	
+    <title>User DashBoard</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
     <link href="css/plugins/dataTables.bootstrap.css" rel="stylesheet">
@@ -36,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<c:url value="adminDashBord"/>" >Welcome <%=username %></a>
+                <a class="navbar-brand" href="<c:url value="userDashboard"/>" >Welcome <%=username %></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -44,10 +45,9 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li><a class="active">Upload csv</a></li>
-                        <li><a href="<c:url value="clubTable"/>" >Club Details</a></li>
-                        <li> <a href="<c:url value="peopleTable"/>" >People Details</a></li>
-                        <li> <a href="<c:url value="createEvent"/>" >Create Event</a></li>
+                        <li><a class="active">My Profile</a></li>
+                        <li><a href="<c:url value="searchClub"/>" >Search Clubs</a></li>
+                        <li> <a href="<c:url value="eventList"/>" >Events</a></li>
                         <li> <a href="<c:url value="logout"/>" >LogOut</a></li>
                     </ul>
                 </div>
@@ -59,7 +59,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Upload csv</h1>
+                    <h1 class="page-header">My Profile</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -70,21 +70,18 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                            	<form action="<c:url value="uploadClubCsv"/>" method="post" enctype="multipart/form-data">
-	                                <div class="form-group">
-	                                     <label>Upload Club csv</label>
-	                                     <input type="file" name="file" required="required" accept=".csv">
-	                                     <input class="btn btn-default" type="submit" style="margin-top: 10px;"/>
-	                                 </div>
-                                 </form>
-                         		 <hr>
-                                 <form action="<c:url value="uploadPeopleCsv"/>" method="post" enctype="multipart/form-data">
-	                                 <div class="form-group">
-	                                     <label>Upload People csv</label>
-	                                     <input type="file" name="file" required="required" accept=".csv">
-	                                     <input class="btn btn-default"  type="submit" style="margin-top: 10px;"/>
-	                                 </div>
-                                 </form>
+                                <div>
+                                	<b>Username : </b> <span>${peopleEntity.name}</span><br><br><br>
+                                	
+                                	<b>Date Of Birth : </b> <span>${peopleEntity.dob}</span><br><br><br>
+                                	
+                                	<b>Phone : </b> <span>${peopleEntity.phone}</span><br><br><br>
+                                	
+                                	<b>Intrests : </b> <span>${peopleEntity.intrests}</span><br><br><br>
+                                	
+                                	<b>Member : </b> <span>${peopleEntity.member}</span><br><br><br>
+	                            </div>
+	                            
                             </div>
                             <!-- /.table-responsive -->
                         </div>
@@ -101,20 +98,11 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
     <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
     <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
-
-    <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->

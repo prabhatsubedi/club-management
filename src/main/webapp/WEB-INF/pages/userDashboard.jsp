@@ -37,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<c:url value="userDashboard"/>" >Wellcome <%=username %></a>
+                <a class="navbar-brand" href="<c:url value="userDashboard"/>" >Welcome <%=username %></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -77,7 +77,7 @@
                                 	
                                 	<b>Phone : </b> <span>${peopleEntity.phone}</span><br><br><br>
                                 	
-                                	<b>Intrests : </b> <span>${peopleEntity.intrests}</span><br><br><br>
+                                	<b>Interests : </b> <span>${peopleEntity.intrests}</span><br><br><br>
                                 	
                                 	<b>Member : </b> <span>${peopleEntity.member}</span><br><br><br>
 	                            </div>
